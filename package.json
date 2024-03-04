@@ -4,10 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npx convex deploy --cmd 'npm run build'",
     "start": "next start",
-    "lint": "next lint",
-    "prepare": "npx convex dev"
+    "lint": "next lint"
   },
   "dependencies": {
     "@clerk/clerk-react": "^4.30.7",
