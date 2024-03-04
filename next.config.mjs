@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  basePath: '/miro-clone-app',
+}
 
-export default nextConfig;
+export default nextConfig
