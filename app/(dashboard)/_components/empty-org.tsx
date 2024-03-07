@@ -10,8 +10,8 @@ export default function EmptyOrg() {
       <Image
         src="/1705060657927.png"
         alt="Background Image"
-        width={1920}
-        height={1080}
+        width={1920 / 2}
+        height={1080 / 2}
       />
       <h2 className="text-2xl font-semibold mt-6">Welcome to Board</h2>
       <p className="text-muted-foreground text-sm mt-2">
