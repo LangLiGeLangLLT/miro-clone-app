@@ -6,6 +6,9 @@ import { useAuth } from '@clerk/nextjs'
 import { formatDistanceToNow } from 'date-fns'
 import Footer from './footer'
 import { Skeleton } from '@/components/ui/skeleton'
+import Actions from '@/components/actions'
+import { MoreHorizontal } from 'lucide-react'
+import { Id } from '@/convex/_generated/dataModel'
 
 export default function BoardCard({
   id,
@@ -17,7 +20,7 @@ export default function BoardCard({
   orgId,
   isFavorite,
 }: {
-  id: string
+  id: Id<'boards'>
   title: string
   imageUrl: string
   authorId: string
@@ -39,6 +42,11 @@ export default function BoardCard({
         <div className="relative flex-1 bg-amber-50">
           <Image src={imageUrl} alt={title} fill className="object-fill" />
           <Overlay />
+          <Actions id={id} title={title} side="right">
+            <button className="absolute top-1 right-1 opacity-0 group-hover:opacity-100 transition-opacity py-2 outline-none">
+              <MoreHorizontal className="text-white opacity-75 hover:opacity-100 transition-opacity" />
+            </button>
+          </Actions>
         </div>
         <Footer
           isFavorite={isFavorite}
