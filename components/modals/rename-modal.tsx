@@ -1,7 +1,7 @@
 'use client'
 
 import { useRenameModal } from '@/stores/use-rename-modal'
-import React, { FormEvent } from 'react'
+import React from 'react'
 import {
   Dialog,
   DialogClose,
@@ -28,7 +28,7 @@ export default function RenameModal() {
     setTitle(initialValues.title)
   }, [initialValues.title])
 
-  function onSubmit(event: FormEvent<HTMLFormElement>) {
+  function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
     mutate({

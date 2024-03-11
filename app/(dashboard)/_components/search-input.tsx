@@ -4,7 +4,7 @@ import { Input } from '@/components/ui/input'
 import { SearchIcon } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import qs from 'query-string'
-import React, { ChangeEvent, useEffect } from 'react'
+import React from 'react'
 import { useDebounceValue } from 'usehooks-ts'
 
 export default function SearchInput() {
@@ -12,11 +12,11 @@ export default function SearchInput() {
   const [value, setValue] = React.useState('')
   const [debounceValue] = useDebounceValue(value, 500)
 
-  function handleChange(e: ChangeEvent<HTMLInputElement>) {
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     setValue(e.target.value)
   }
 
-  useEffect(() => {
+  React.useEffect(() => {
     const url = qs.stringifyUrl(
       {
         url: '/',
