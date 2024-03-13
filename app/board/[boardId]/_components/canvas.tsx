@@ -8,7 +8,7 @@ import Toolbar from './toolbar'
 export default function Canvas({ boardId }: { boardId: string }) {
   return (
     <main className="min-h-screen relative bg-neutral-100 touch-none">
-      <Info />
+      <Info boardId={boardId} />
       <Participants />
       <Toolbar />
     </main>

@@ -12,6 +12,7 @@
     "@clerk/clerk-react": "^4.30.7",
     "@clerk/nextjs": "^4.29.9",
     "@liveblocks/client": "^1.10.3",
+    "@liveblocks/node": "^1.10.3",
     "@liveblocks/react": "^1.10.3",
     "@radix-ui/react-alert-dialog": "^1.0.5",
     "@radix-ui/react-dialog": "^1.0.5",

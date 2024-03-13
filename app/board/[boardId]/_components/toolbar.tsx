@@ -17,7 +17,7 @@ export default function Toolbar() {
   )
 }
 
-Toolbar.Skeleton = function ToolbarSkeleton() {
+export function ToolbarSkeleton() {
   return (
     <div className="absolute top-1/2 -translate-y-1/2 left-2 flex flex-col space-y-4 bg-white h-[360px] w-[52px] shadow-md rounded-md" />
   )
