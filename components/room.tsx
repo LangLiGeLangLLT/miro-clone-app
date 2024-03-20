@@ -14,7 +14,12 @@ export default function Room({
   fallback: NonNullable<React.ReactNode> | null
 }) {
   return (
-    <RoomProvider id={roomId} initialPresence={{}}>
+    <RoomProvider
+      id={roomId}
+      initialPresence={{
+        cursor: null,
+      }}
+    >
       <ClientSideSuspense fallback={fallback}>
         {() => children}
       </ClientSideSuspense>
