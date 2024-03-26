@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useCallback } from 'react'
+import React from 'react'
 import Info from './info'
 import Participants from './participants'
 import Toolbar from './toolbar'
@@ -32,6 +32,7 @@ import { nanoid } from 'nanoid'
 import { LiveObject } from '@liveblocks/client'
 import LayerPreview from './layer-preview'
 import SelectionBox from './selection-box'
+import SelectionTools from './selection-tools'
 
 const MAX_LAYERS = 100
 
@@ -194,7 +195,7 @@ export default function Canvas({ boardId }: { boardId: string }) {
     setMyPresence({ cursor: null })
   }, [])
 
-  const onPointerDown = useCallback(
+  const onPointerDown = React.useCallback(
     (e: React.PointerEvent) => {
       const point = pointerEventToCanvasPoint(e, camera)
 
@@ -284,6 +285,7 @@ export default function Canvas({ boardId }: { boardId: string }) {
         undo={history.undo}
         redo={history.redo}
       />
+      <SelectionTools camera={camera} setLastUsedColor={setLastUsedColor} />
       <svg
         className="h-screen w-screen"
         onWheel={onWheel}
