@@ -22,7 +22,7 @@ export function pointerEventToCanvasPoint(
   }
 }
 
-export function ColorToCss(color: Color) {
+export function colorToCss(color: Color) {
   return `#${color.r.toString(16).padStart(2, '0')}${color.g
     .toString(16)
     .padStart(2, '0')}${color.b.toString(16).padStart(2, '0')}`
@@ -92,4 +92,10 @@ export function findIntersectingLayersWithRectangle(
   }
 
   return ids
+}
+
+export function getContrastingTextColor(color: Color) {
+  const luminance = (color.r * 299 + color.g * 587 + color.b * 114) / 1000
+
+  return luminance > 182 ? 'black' : 'white'
 }

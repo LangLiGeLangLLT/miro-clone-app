@@ -15,10 +15,21 @@ const boundingBox = (layers: Layer[]): XYWH | null => {
   for (let i = 1; i < layers.length; i++) {
     const { x, y, width, height } = layers[i]
 
-    left = Math.max(left, x)
-    right = Math.min(right, x + width)
-    top = Math.max(top, y)
-    bottom = Math.min(bottom, y + height)
+    if (left > x) {
+      left = x
+    }
+
+    if (right < x + width) {
+      right = x + width
+    }
+
+    if (top > y) {
+      top = y
+    }
+
+    if (bottom < y + height) {
+      bottom = y + height
+    }
   }
 
   return {

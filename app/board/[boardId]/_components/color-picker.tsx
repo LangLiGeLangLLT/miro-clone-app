@@ -1,6 +1,6 @@
 'use client'
 
-import { ColorToCss } from '@/lib/utils'
+import { colorToCss } from '@/lib/utils'
 import { Color } from '@/types/canvas'
 import React from 'react'
 
@@ -37,7 +37,7 @@ function ColorButton({
     >
       <div
         className="size-8 rounded-md border border-neutral-300"
-        style={{ background: ColorToCss(color) }}
+        style={{ background: colorToCss(color) }}
       />
     </button>
   )
