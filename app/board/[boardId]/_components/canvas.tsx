@@ -40,7 +40,6 @@ import SelectionTools from './selection-tools'
 import Path from './path'
 import { useDisableScrollBounce } from '@/hooks/use-disable-scroll-bounce'
 import { useDeleteLayers } from '@/hooks/use-delete-layers'
-import { debounce } from 'lodash'
 
 const MAX_LAYERS = 100
 
