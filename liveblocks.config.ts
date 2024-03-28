@@ -1,6 +1,6 @@
 import { createClient, LiveList, LiveMap, LiveObject } from '@liveblocks/client'
 import { createRoomContext, createLiveblocksContext } from '@liveblocks/react'
-import { Layer } from './types/canvas'
+import { Color, Layer } from './types/canvas'
 
 const client = createClient({
   throttle: 16,
@@ -58,6 +58,8 @@ type Presence = {
   // ...
   cursor: { x: number; y: number } | null
   selection: string[]
+  pencilDraft: [x: number, y: number, pressure: number][] | null
+  penColor: Color | null
 }
 
 // Optionally, Storage represents the shared document that persists in the
